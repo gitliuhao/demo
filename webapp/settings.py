@@ -26,6 +26,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+TAILF = {
+    1: '/ops/coffee/error.log',
+    2: '/ops/coffee/access.log',
+}
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -36,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
     'chat',
+    'tailf',
 ]
 
 MIDDLEWARE = [
@@ -73,8 +79,12 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "demo1",
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
