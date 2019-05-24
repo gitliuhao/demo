@@ -76,26 +76,16 @@
   <aside class="main-sidebar">
     <section class="sidebar">
       <ul class="sidebar-menu" data-widget="tree">
+          {% for ip in server_list %}
         <li id="menu_demo_table">
-          <a href="{% url 'chat-url' %}">
-            <i class="fa fa-heartbeat"></i> <span>Chat</span>
+          <a href="{% url 'tailf-url' %}?server_ip={{ ip }}">
+            <i class="fa fa-heartbeat"></i> <span>{{ ip }}</span>
           </a>
         </li>
+          {% endfor %}
       </ul>
     </section>
   </aside>
-
-{#  <aside class="main-sidebar">#}
-{#    <section class="sidebar">#}
-{#      <ul class="sidebar-menu" data-widget="tree">#}
-{#        <li id="menu_demo_table">#}
-{#          <a href="{% url 'chat-url' %}">#}
-{#            <i class="fa fa-heartbeat"></i> <span>Chat</span>#}
-{#          </a>#}
-{#        </li>#}
-{#      </ul>#}
-{#    </section>#}
-{#  </aside>#}
 
   <!-- =============================================== -->
 
@@ -133,7 +123,6 @@
   $('.sidebar-menu li a').each(function () {
     var link = $(this).attr("href");
     if (link == window.location.pathname) {
-        console.log('xxxxxxxxxx')
       $(this).parent().addClass('active');
       $(this).parent().parent().parent().addClass('active');
     }

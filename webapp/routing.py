@@ -15,7 +15,7 @@ from tailf.consumers import TailfConsumer
 # })
 
 
-url_patterns =  chat.routing.websocket_urlpatterns + [re_path(r"^ws/tailf/(?P<id>\d+)/$", TailfConsumer)]
+url_patterns =  chat.routing.websocket_urlpatterns + [re_path(r"^ws/tailf/$", TailfConsumer)]
 application = ProtocolTypeRouter({
     # (http->django views is added by default)
     'websocket': AuthMiddlewareStack(

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "tailf/base.html" %}
 
 {% block content %}
 <form>
@@ -14,8 +14,8 @@
 <div class="col-sm-8">
   <select class="form-control" id="file">
     <option value="">选择要监听的日志</option>
-    {% for k,v in logDict.items %}
-    <option value="{{ k }}">{{ v }}</option>
+    {% for log in log_list %}
+    <option value="{{ log }}">{{ log }}</option>
     {% endfor %}
   </select>
 </div>
@@ -32,8 +32,12 @@
 
   function connect() {
     if ( $('#file').val() ) {
+      var args = window.location.search
+      console.log(args)
+      {#window.chatSocket = new WebSocket(#}
+      {#  'ws://' + window.location.host + '/ws/tailf/' + $('#file').val() + '/');#}
       window.chatSocket = new WebSocket(
-        'ws://' + window.location.host + '/ws/tailf/' + $('#file').val() + '/');
+        'ws://' + window.location.host + '/ws/tailf/' + args + "&log_name=" + $('#file').val());
 
       chatSocket.onmessage = function(e) {
         var data = JSON.parse(e.data);

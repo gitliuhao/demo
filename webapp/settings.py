@@ -134,3 +134,8 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+SERVER_DICT = {
+    '11.11.11.11': {'user': 'root', 'password': 'vagrant'},
+    '22.22.22.22': {'user': 'root', 'password': 'vagrant'},
+}
