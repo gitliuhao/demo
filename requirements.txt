@@ -19,7 +19,7 @@ Click==7.0
 constantly==15.1.0
 cryptography==2.6.1
 daphne==2.3.0
-Django==2.0
+Django==2.2.24
 django-celery==3.2.1
 Flask==1.0.3
 Flask-SocketIO==4.0.0
