@@ -34,7 +34,7 @@ kombu==3.0.37
 Mako==1.0.6
 MarkupSafe==1.0
 msgpack==0.6.1
-paramiko==2.4.2
+paramiko==2.10.1
 pyasn1==0.4.5
 pycparser==2.19
 PyHamcrest==1.9.0
